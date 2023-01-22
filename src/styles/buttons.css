@@ -1,0 +1,83 @@
+/*
+* defaults
+*/
+
+.btn {
+  background-color: var(--primary);
+  border: none;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--primary-hover);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:focus,
+.btn:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/*
+* sizes
+*/
+
+.btn_sm {
+  padding: 0.4em 1em;
+  font-size: 0.9em;
+}
+
+.btn_md {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+}
+
+.btn_lg {
+  padding: 0.8em 1.4em;
+  font-size: 1.1em;
+}
+
+/*
+* colors
+*/
+
+.btn_info {
+  background-color: var(--info);
+}
+.btn_info:hover,
+.btn_info:focus {
+  background-color: var(--info-hover);
+}
+
+.btn_success {
+  background-color: var(--success);
+}
+.btn_success:hover,
+.btn_success:focus {
+  background-color: var(--success-hover);
+}
+
+.btn_warning {
+  background-color: var(--warning);
+}
+.btn_warning:hover,
+.btn_warning:focus {
+  background-color: var(--warning-hover);
+}
+
+.btn_error {
+  background-color: var(--error);
+}
+.btn_error:hover,
+.btn_error:focus {
+  background-color: var(--error-hover);
+}

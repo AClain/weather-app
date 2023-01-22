@@ -1,0 +1,35 @@
+/*
+* defaults
+*/
+
+.title {
+  font-weight: bold;
+}
+
+/*
+* orders
+*/
+
+.title_h1 {
+  font-size: 2.2em;
+}
+
+.title_h2 {
+  font-size: 2em;
+}
+
+.title_h3 {
+  font-size: 1.8em;
+}
+
+.title_h4 {
+  font-size: 1.6em;
+}
+
+.title_h5 {
+  font-size: 1.4em;
+}
+
+.title_h6 {
+  font-size: 1.2em;
+}

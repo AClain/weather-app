@@ -1,0 +1,28 @@
+.todo {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.todo_done {
+  opacity: 0.75;
+}
+
+.todo_hidden {
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all 0.1s ease-in-out;
+}
+
+.todo:hover .todo_hidden {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 960px) {
+  .todo_hidden {
+    visibility: visible;
+    opacity: 1;
+  }
+}

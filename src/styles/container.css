@@ -1,0 +1,25 @@
+/*
+* defaults
+*/
+
+.container {
+}
+
+/*
+* sizes
+*/
+
+.container_sm {
+  padding-inline: 2em;
+  padding-block: 1em;
+}
+
+.container_md {
+  padding-inline: 4em;
+  padding-block: 2em;
+}
+
+.container_lg {
+  padding-inline: 6em;
+  padding-block: 3em;
+}

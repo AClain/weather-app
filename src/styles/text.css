@@ -1,0 +1,18 @@
+/*
+* defaults
+*/
+
+.text {
+}
+
+/*
+* font-styles
+*/
+
+.text_italic {
+  font-style: italic;
+}
+
+.text_bold {
+  font-weight: bold;
+}

@@ -1,0 +1,10 @@
+/*
+* defaults
+*/
+
+.divider {
+  padding-block: 2em;
+  width: 100%;
+  background-color: var(--text-color);
+  opacity: 0.75;
+}
