@@ -1,0 +1,35 @@
+#search_input {
+  padding: 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border: none;
+  width: 100%;
+}
+
+.matching_cities {
+  position: absolute;
+  top: 100%;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.matching_city {
+  padding: 5px;
+  width: 100%;
+  background-color: #2b2a33;
+  transition: all 0.1s ease-in-out;
+}
+
+.matching_city:hover {
+  cursor: pointer;
+  background-color: #232227;
+}
+
+.matching_city:last-of-type {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.hightlight {
+  background-color: coral;
+}

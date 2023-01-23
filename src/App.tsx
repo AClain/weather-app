@@ -1,52 +1,41 @@
 import Container from 'components/atoms/Container';
-import Flex from 'components/atoms/Flex';
-import Title from 'components/atoms/Title';
-import Divider from 'components/atoms/Divider';
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import Button from 'components/atoms/Button';
-import { IconArrowRight } from '@tabler/icons';
-import { WeatherData } from './index.d';
+import { useState } from 'react';
+import { City, WeatherData } from './index.d';
+import cities from 'assets/cities.json';
+import SearchInput from 'components/molecules/SearchInput';
 
 import './App.css';
+import Title from 'components/atoms/Title';
 
 function App() {
-  const [weatherDate, setWeatherData] = useState<WeatherData>({});
-  const [inputValue, setInputValue] = useState('');
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
-  useEffect(() => {
-    fetch('')
-      .then((res) => {
-        console.log(res);
+  const onSelect = (city: City) => {
+    fetch(
+      import.meta.env.VITE_API_BASE_URL +
+        `/weather?q=${city.name},${city.state_code},${city.country_code}&units=metrics&appid=${
+          import.meta.env.VITE_API_KEY
+        }`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setWeatherData(data);
       })
       .catch((err) => {
         console.error(err);
       });
-  }, []);
-
-  const onChange = (_e: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(_e.target.value);
-  };
-
-  const onSubmit = (_e: FormEvent<HTMLFormElement>) => {
-    _e.preventDefault();
-
-    if (inputValue !== '') {
-      setInputValue('');
-    }
   };
 
   return (
     <Container>
-      <Flex as="form" align="center" styles={{ marginBottom: '15px' }} onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          value={inputValue}
-          id="new_todo_input"
-          type="text"
-          placeholder="Add something to do ..."
-        />
-        <Button type="submit" label="Add" rightIcon={<IconArrowRight size={18} />} />
-      </Flex>
+      <SearchInput items={cities as City[]} onSelect={onSelect} />
+
+      {weatherData ? (
+        <Flex>
+          <Title>{weatherData.name}</Title>
+        </Flex>
+      ) : null}
     </Container>
   );
 }
