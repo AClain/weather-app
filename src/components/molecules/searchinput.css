@@ -31,5 +31,24 @@
 }
 
 .hightlight {
-  background-color: coral;
+  background-color: #14532d;
+}
+
+.icon_close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: var(--error);
+  padding: 3px;
+  border-radius: 4px;
+  transition: all 0.1s ease-in-out;
+}
+
+.icon_close:hover {
+  cursor: pointer;
+  background-color: var(--error-hover);
+}
+
+.icon_close:active {
+  transform: scale(0.95);
 }

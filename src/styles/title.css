@@ -33,3 +33,11 @@
 .title_h6 {
   font-size: 1.2em;
 }
+
+/*
+* other
+*/
+
+.no_margin {
+  margin: 0px;
+}

@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { City, WeatherData } from './index.d';
 import cities from 'assets/cities.json';
 import SearchInput from 'components/molecules/SearchInput';
+import WeatherCard from 'components/organisms/WeatherCard';
 
 import './App.css';
-import Title from 'components/atoms/Title';
 
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
@@ -13,7 +13,7 @@ function App() {
   const onSelect = (city: City) => {
     fetch(
       import.meta.env.VITE_API_BASE_URL +
-        `/weather?q=${city.name},${city.state_code},${city.country_code}&units=metrics&appid=${
+        `/weather?q=${city.name},${city.state_code},${city.country_code}&units=metric&appid=${
           import.meta.env.VITE_API_KEY
         }`,
     )
@@ -31,11 +31,7 @@ function App() {
     <Container>
       <SearchInput items={cities as City[]} onSelect={onSelect} />
 
-      {weatherData ? (
-        <Flex>
-          <Title>{weatherData.name}</Title>
-        </Flex>
-      ) : null}
+      {weatherData ? <WeatherCard weatherData={weatherData} /> : null}
     </Container>
   );
 }
